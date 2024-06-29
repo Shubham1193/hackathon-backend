@@ -52,19 +52,7 @@ const userSchema = mongoose.Schema({
     }
 });
 
-const questionSchema = new mongoose.Schema({
-    id: { type: Number, required: true },
-    question: { type: String, required: true },
-    options: { type: [String], required: true }, // Array of strings for options
-    answer: { type: String, required: true }
-  });
-  
-  const quizSchema = new mongoose.Schema({
-    title: { type: String },
-    userId: { type: String },
-    question: [questionSchema],
-    score: { type: [Number], required: true }
-  });
+
 
 export const User = mongoose.model('User' , userSchema)
 export const Quiz = mongoose.model('Quiz' , quizSchema)
